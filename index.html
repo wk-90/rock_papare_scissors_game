@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Rock, paper, scisors</title>
+    <style> 
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            
+        }
+
+        .container {
+            margin-top: 20px;
+        }
+        .container .row {
+            margin: 20px auto;
+            display: block;
+            text-align: center;
+            }
+
+        .container table {
+            margin: 10px auto;
+            width: 800px;
+        }
+        button {             
+                margin: 20px auto;
+                width: 200px;
+                height: 50px;
+                font-size: 16px;
+                    
+        }
+
+        button:hover {
+            
+            
+            font-weight: bold;
+        }
+
+
+        .container .label {
+            font-size: 24px;
+            padding: 5px;
+        }
+        .container .label-default {
+            background-color: #6c757d;
+            border-radius: 10px;
+            color: white;
+
+        }
+        .container .label-info {
+            background-color: #007bff;
+            border-radius: 10px;
+            color: white;
+            
+        }
+        .container .label-danger {
+            background-color: #dc3545;
+            border-radius: 10px;
+            color: white;
+            
+        }
+
+        #js-winnerElement {
+            margin-top: 40px;
+            font-size: 20px;
+        }
+
+        #js-winner {
+            font-weight: bold;
+        }
+
+        #js-playerPoints, #js-computerPoints {
+            font-size: 20px;
+        }
+
+        #js-newGameElement {
+            margin: 20px auto;
+        }
+        #js-newGameElement input {
+            width: 300px;
+            margin: 0 auto;
+            text-align: center;
+        }
+       
+        
+    </style>
+</head>
+<body>
+
+    <!--  Tytuł gry-->
+    <div class="container">
+        <h3 class="text-center">
+            Witaj w grze
+            <span class="label label-default">Kamień</span>
+            <span class="label label-info">Papier</span>
+            <span class="label label-danger">Nożyce</span>
+        </h3>
+    </div>
+
+    <!-- Nowa gra -->
+
+    <div id="js-newGameElement" class="container">
+        <div class="row text-center">
+            <button id="js-newGameButton" class="btn btn-success"> Nowa Gra </button>
+            <input type="text" class="form-control" placeholder="Wpisz swoje imię">
+        </div>
+    </div>
+
+    
+
+    <!-- Wybór gracza  -->
+    <div id="js-playerPickElement" class="container">
+        <div class="row text-center">
+            <button id="js-playerPick-rock" class="btn btn-secondary">
+                <span class="badge">
+                    <i class="fa fa-2x fa-hand-rock-o" aria-hidden="true"></i>
+                </span>
+                Kamień
+            </button>
+            <button id="js-playerPick-paper" class="btn btn-primary">
+                <span class="badge">
+                    <i class="fa fa-2x fa-hand-paper-o" aria-hidden="true"></i>
+                </span>
+                Papier
+            </button>
+            <button id="js-playerPick-scissors" class="btn btn-danger">
+                <span class="badge">
+                    <i class="fa fa-2x fa-hand-scissors-o" aria-hidden="true"></i>
+                </span>
+                Nożyce
+            </button>
+        </div>
+    </div>
+
+    <!-- Tabela wyników -->
+    <div id="js-resultsTableElement" class="container">
+            <table class="table table-borderless">
+                 <thead style="border-bottom: 2px solid black">
+                    <tr style="font-size: 20px"">
+                     
+                        <th style="text-align: right; width: 200px"> <span id="js-playerName"> Imię gracza </span> </th>
+                        <th style="text-align: right; width: 150px"><span id="js-playerPoints" class="badge"> 0 </span> </th>
+                        <td style="text-align: center; width: 50px;"> vs </td>                    
+                        <th style="width: 150px"><span id="js-computerPoints" class="badge"> 0 </span> </th>
+                        <th style="width: 200px; text-align: left"> Komputer </th>
+                    </tr>
+                    </thead>
+                    <tbody >                    
+                    <tr>
+                        <td style="text-align: right">  Wybór gracza: </td>
+                        <td style="text-align: left"> <span id="js-playerPick"> </span></td>
+                        <td style="text-align: center; font-weight: bold;"> - </td>
+                        <td style="text-align: center"> Wybór komputera:</td>
+                        <td style="text-align: left"><span id="js-computerPick"> </span></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right"> Wynik gracza: </td>
+                        <td style="text-align: left"> <span id="js-playerResult"> </span> </td>
+                        <td style="text-align: center; font-weight: bold;"> - </td>
+                        <td style="text-align: center">  Wynik komputera: </td>
+                        <td style="text-align: left"> <span id="js-computerResult"> </span></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="row" id="js-winnerElement">Zwycięzca:
+                    <span id="js-winner"> </span>
+        
+            </div>
+    </div>
+
+    
+
+
+
+    <script src="game.js"></script>
+</body>
+</html>
