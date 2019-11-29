@@ -7,3 +7,4 @@ Simple rock, paper, scissors game written in HTML, CSS, JS with bootstrap elemen
 3. IA choose is random.
 3. First who score 10 points win - player or IA.
 
+### Go to https://wk-90.github.io/rock_paper_scissors_game/ to play the game.
