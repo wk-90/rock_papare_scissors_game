@@ -27,7 +27,7 @@ const pickScissors = document.getElementById('js-playerPick-scissors');
 
 
 
-// Po wyborze gracz wywołana zostaje funkcja z parametrem reprezentującym wybór gracza
+// Po wyborze gracza wywołana zostaje funkcja z parametrem reprezentującym wybór gracza
 pickRock.addEventListener('click', ()=> {playerPick('rock')} );
 pickPaper.addEventListener('click', ()=> {playerPick('paper')} );
 pickScissors.addEventListener('click', ()=> {playerPick('scissors')} );
